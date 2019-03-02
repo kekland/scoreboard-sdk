@@ -4,7 +4,8 @@
   "description": "Source Development Kit for Scoreboard server, written in TypeScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "node generator/generator"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/kekland/scoreboard-sdk/issues"
   },
-  "homepage": "https://github.com/kekland/scoreboard-sdk#readme"
+  "homepage": "https://github.com/kekland/scoreboard-sdk#readme",
+  "devDependencies": {
+    "fs-extra": "^7.0.1",
+    "fs-jetpack": "^2.2.2"
+  }
 }
