@@ -1,0 +1,23 @@
+{
+  "name": "scoreboard-sdk",
+  "version": "0.0.0",
+  "description": "Source Development Kit for Scoreboard server, written in TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kekland/scoreboard-sdk.git"
+  },
+  "keywords": [
+    "typescript",
+    "sdk"
+  ],
+  "author": "kekland <kk.erzhan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kekland/scoreboard-sdk/issues"
+  },
+  "homepage": "https://github.com/kekland/scoreboard-sdk#readme"
+}
