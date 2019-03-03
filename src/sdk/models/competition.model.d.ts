@@ -1,0 +1,35 @@
+import { ICompetitionCreateRequestObject, ICompetitionSetStatusRequestObject, ICompetitionEditRequestObject, ICompetitionEditRoundsRequestObject } from '../../modules/competition/model/data/competition.data.sdk.interface';
+import { ICompetitorAddRequestObject, ICompetitorSetResultRequestObject } from '../../modules/competitor/model/data/competitor.data.sdk.interface';
+import { JudgeModel } from './judge.model';
+import { IJudgeAddRequestObject } from '../../modules/judge/model/data/judge.data.sdk.interface';
+import { CompetitorModel } from './competitor.model';
+import { IPaginationData, IPaginationResponseObject, IDatePair, CompetitionStatus, ICompetitorWithResultsSecure } from '../../index.sdk';
+import { ICompetitionSecure } from '../../modules/competition/model/competition.sdk.interface';
+import { IPaginationStub } from '../../shared/model/pagination.model';
+export declare class CompetitionModel implements ICompetitionSecure {
+    _id: string;
+    title: string;
+    subject: string;
+    grade: string;
+    date: IDatePair;
+    rounds: number;
+    competitors: IPaginationStub;
+    judges: IPaginationStub;
+    organizerId: string;
+    status: CompetitionStatus;
+    static getCompetitions(pagination: IPaginationData): Promise<IPaginationResponseObject<CompetitionModel>>;
+    static getCompetition(id: string): Promise<CompetitionModel>;
+    static createCompetition(data: ICompetitionCreateRequestObject, token: string): Promise<CompetitionModel>;
+    setCompetitionStatus(data: ICompetitionSetStatusRequestObject, token: string): Promise<CompetitionModel>;
+    editCompetition(data: ICompetitionEditRequestObject, token: string): Promise<CompetitionModel>;
+    editCompetitionRounds(data: ICompetitionEditRoundsRequestObject, token: string): Promise<CompetitionModel>;
+    deleteCompetition(token: string): Promise<void>;
+    getCompetitors(pagination: IPaginationData): Promise<IPaginationResponseObject<CompetitorModel>>;
+    getCompetitorsDetailed(pagination: IPaginationData, token: string): Promise<IPaginationResponseObject<CompetitorModel>>;
+    addCompetitor(data: ICompetitorAddRequestObject, token: string): Promise<CompetitorModel>;
+    setCompetitorResult(cypherId: string, data: ICompetitorSetResultRequestObject, token: string): Promise<ICompetitorWithResultsSecure>;
+    getJudges(pagination: IPaginationData): Promise<IPaginationResponseObject<JudgeModel>>;
+    getJudgesDetailed(pagination: IPaginationData, token: string): Promise<IPaginationResponseObject<JudgeModel>>;
+    getJudge(judgeId: string): Promise<JudgeModel>;
+    addJudge(data: IJudgeAddRequestObject, token: string): Promise<JudgeModel>;
+}

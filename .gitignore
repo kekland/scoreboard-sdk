@@ -1,3 +1,2 @@
-/generator/
-.vscode/
-node_modules/
+/generate.js
+/node_modules/
