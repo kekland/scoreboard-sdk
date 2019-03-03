@@ -13,7 +13,14 @@ Welcome to Scoreboard's SDK. It is written in `TypeScript` and compiled down to 
 
 ```bash
 cd my-fancy-project/src
-git clone https://github.com/kekland/scoreboard-src
+git clone https://github.com/kekland/scoreboard-sdk
+```
+
+## Updating
+
+```bash
+cd my-fancy-project/src/scoreboard-sdk
+git pull origin master
 ```
 
 ## Examples
