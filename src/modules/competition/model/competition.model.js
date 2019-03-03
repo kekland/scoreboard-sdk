@@ -31,6 +31,7 @@ class CompetitionDetailed extends model_class_1.Model {
         this.rounds = data.rounds;
         this.competitors = { count: data.competitors.length };
         this.judges = { count: data.judges.length };
+        this.news = { count: data.news.length };
         this.organizerId = data.organizerId;
         this.status = data.status;
     }
@@ -50,6 +51,7 @@ class CompetitionSecure extends model_class_1.Model {
         this.rounds = data.rounds;
         this.competitors = { count: data.competitors.length };
         this.judges = { count: data.judges.length };
+        this.news = { count: data.news.length };
         this.organizerId = data.organizerId;
         this.status = data.status;
     }

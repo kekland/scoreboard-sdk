@@ -6,6 +6,9 @@ import { CompetitorModel } from './competitor.model';
 import { IPaginationData, IPaginationResponseObject, IDatePair, CompetitionStatus, ICompetitorWithResultsSecure } from '../../index.sdk';
 import { ICompetitionSecure } from '../../modules/competition/model/competition.sdk.interface';
 import { IPaginationStub } from '../../shared/model/pagination.model';
+import { ICompetitionNews } from '../../modules/news/model/news.sdk.interface';
+import { NewsModel } from './news.model';
+import { INewsAddRequestObject } from '../../modules/news/model/data/news.data.sdk.interface';
 export declare class CompetitionModel implements ICompetitionSecure {
     _id: string;
     title: string;
@@ -15,6 +18,7 @@ export declare class CompetitionModel implements ICompetitionSecure {
     rounds: number;
     competitors: IPaginationStub;
     judges: IPaginationStub;
+    news: IPaginationStub;
     organizerId: string;
     status: CompetitionStatus;
     static getCompetitions(pagination: IPaginationData): Promise<IPaginationResponseObject<CompetitionModel>>;
@@ -32,4 +36,6 @@ export declare class CompetitionModel implements ICompetitionSecure {
     getJudgesDetailed(pagination: IPaginationData, token: string): Promise<IPaginationResponseObject<JudgeModel>>;
     getJudge(judgeId: string): Promise<JudgeModel>;
     addJudge(data: IJudgeAddRequestObject, token: string): Promise<JudgeModel>;
+    getNews(pagination: IPaginationData): Promise<IPaginationResponseObject<ICompetitionNews>>;
+    addNews(data: INewsAddRequestObject, token: string): Promise<NewsModel>;
 }

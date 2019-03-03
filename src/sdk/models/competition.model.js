@@ -12,6 +12,7 @@ const requester_service_1 = require("../requester.service");
 const scoreboard_sdk_1 = require("../scoreboard.sdk");
 const judge_model_1 = require("./judge.model");
 const competitor_model_1 = require("./competitor.model");
+const news_model_1 = require("./news.model");
 class CompetitionModel {
     static getCompetitions(pagination) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -100,6 +101,18 @@ class CompetitionModel {
         return __awaiter(this, void 0, void 0, function* () {
             const judge = yield requester_service_1.post(`${scoreboard_sdk_1.scoreboardBaseUrl}/competition/${this._id}/judge`, judge_model_1.JudgeModel, data, token);
             return judge;
+        });
+    }
+    getNews(pagination) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const news = yield requester_service_1.getPaginated(`${scoreboard_sdk_1.scoreboardBaseUrl}/competition/${this._id}/news`, news_model_1.NewsModel, pagination);
+            return news;
+        });
+    }
+    addNews(data, token) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const news = yield requester_service_1.post(`${scoreboard_sdk_1.scoreboardBaseUrl}/competition/${this._id}/news`, news_model_1.NewsModel, data, token);
+            return news;
         });
     }
 }
