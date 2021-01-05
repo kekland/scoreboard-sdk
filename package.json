@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/kekland/scoreboard-sdk#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "class-transformer": "^0.2.0"
   },
   "devDependencies": {
